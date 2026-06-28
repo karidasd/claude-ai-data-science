@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude AI & Data Science Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-brain-circuit logo-icon"></i>
+                    <span>Claude DS Hub</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="curriculum">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Curriculum Guide</span>
+                </button>
+                <button class="nav-item" data-tab="notebooks">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Interactive Notebooks</span>
+                </button>
+                <button class="nav-item" data-tab="mcp">
+                    <i class="fa-solid fa-server"></i>
+                    <span>MCP Server Config</span>
+                </button>
+                <button class="nav-item" data-tab="skills">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Agent Skills</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <i class="fa-brands fa-github user-avatar"></i>
+                    <div class="user-info">
+                        <span class="user-name">karidasd</span>
+                        <span class="user-role">GitHub Account</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header/Hero Banner Section -->
+            <header class="hero-banner" style="background-image: linear-gradient(to right, rgba(13, 11, 26, 0.95), rgba(13, 11, 26, 0.4)), url('assets/ai_ds_banner.png');">
+                <div class="hero-content">
+                    <span class="badge">Anthropic Claude + Data Science</span>
+                    <h1>Bridging Artificial Intelligence & Data Science</h1>
+                    <p>Unlock the power of Anthropic's Claude courses and APIs customized specifically for data analytics, statistical modeling, RAG pipelines, and automated python execution.</p>
+                </div>
+            </header>
+
+            <!-- Tab: Curriculum Guide -->
+            <section id="curriculum-tab" class="tab-panel active">
+                <div class="section-header">
+                    <h2>Anthropic Academy Course Catalog</h2>
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All Courses</button>
+                        <button class="filter-btn" data-filter="no-code">No Coding Required</button>
+                        <button class="filter-btn" data-filter="python">Python Developer</button>
+                    </div>
+                </div>
+
+                <div class="courses-grid" id="courses-container">
+                    <!-- Dynamic courses injected by app.js -->
+                </div>
+            </section>
+
+            <!-- Tab: Interactive Notebooks -->
+            <section id="notebooks-tab" class="tab-panel">
+                <div class="section-header">
+                    <h2>Jupyter Interactive Notebooks (`# %%`)</h2>
+                    <p>Run these scripts in your IDE to learn hands-on integration of Claude with Data Science.</p>
+                </div>
+                <div class="notebooks-list">
+                    <div class="notebook-card">
+                        <div class="notebook-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="notebook-details">
+                            <h3>01_claude_api_for_data_science.py</h3>
+                            <p>Introduction to the Anthropic Python SDK, structure of API requests, handling datasets (CSV/JSON), and using system prompts for data analysis.</p>
+                            <span class="notebook-path">📁 notebooks/01_claude_api_for_data_science.py</span>
+                        </div>
+                    </div>
+                    <div class="notebook-card">
+                        <div class="notebook-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="notebook-details">
+                            <h3>02_prompt_engineering_for_data_scientists.py</h3>
+                            <p>Advanced prompting patterns: XML tags for organizing data, few-shot examples for feature engineering, and extracting structured JSON predictions.</p>
+                            <span class="notebook-path">📁 notebooks/02_prompt_engineering_for_data_scientists.py</span>
+                        </div>
+                    </div>
+                    <div class="notebook-card">
+                        <div class="notebook-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="notebook-details">
+                            <h3>03_tool_use_and_data_agents.py</h3>
+                            <p>Defining tools/functions (like SQL query execution, model training) that Claude can call to automate analytical workflows.</p>
+                            <span class="notebook-path">📁 notebooks/03_tool_use_and_data_agents.py</span>
+                        </div>
+                    </div>
+                    <div class="notebook-card">
+                        <div class="notebook-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="notebook-details">
+                            <h3>04_rag_on_scientific_literature.py</h3>
+                            <p>A search and retrieval workflow connecting Claude to scientific publication APIs (arXiv/PubMed) for automated research summarization.</p>
+                            <span class="notebook-path">📁 notebooks/04_rag_on_scientific_literature.py</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prompt-builder-sandbox">
+                    <h3>Interactive Prompt Engineering Sandbox</h3>
+                    <p>See how XML tags organize messy datasets for Claude. Try toggling structured tags!</p>
+                    <div class="sandbox-container">
+                        <div class="sandbox-input">
+                            <label>Without XML Structure (Hard for AI):</label>
+                            <textarea readonly id="raw-prompt">Analyze customer feedback: The widget broke on first use! Customer name: John Doe. Rating: 1 star. Generate a JSON response containing customer, feedback, and rating.</textarea>
+                            <button class="btn btn-primary toggle-xml-btn">Apply XML Structuring</button>
+                        </div>
+                        <div class="sandbox-output">
+                            <label>Structured with XML (Recommended):</label>
+                            <pre><code id="structured-prompt">Click the button to see structured XML output formatting...</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: MCP Server Config -->
+            <section id="mcp-tab" class="tab-panel">
+                <div class="section-header">
+                    <h2>Data Science MCP Server Configuration</h2>
+                    <p>Give Claude Desktop or Claude Code the power to execute python code and analyze local datasets.</p>
+                </div>
+                <div class="mcp-config-box">
+                    <div class="config-header">
+                        <span>claude_desktop_config.json</span>
+                        <button class="copy-btn" id="copy-mcp-btn"><i class="fa-regular fa-copy"></i> Copy Configuration</button>
+                    </div>
+                    <pre><code id="mcp-code-block">{
+  "mcpServers": {
+    "data-science-mcp": {
+      "command": "python",
+      "args": [
+        "C:/Users/karid/.gemini/antigravity/scratch/claude-ai-data-science/mcp/ds_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}</code></pre>
+                </div>
+                <div class="mcp-steps">
+                    <h3>How to set this up:</h3>
+                    <ol>
+                        <li>Press <kbd>Win</kbd> + <kbd>R</kbd>, type <code>%APPDATA%\Claude</code> and hit Enter.</li>
+                        <li>Open or create <code>claude_desktop_config.json</code> in a text editor.</li>
+                        <li>Copy the JSON above and paste it inside the file, then save.</li>
+                        <li>Restart your Claude Desktop application.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Tab: Agent Skills -->
+            <section id="skills-tab" class="tab-panel">
+                <div class="section-header">
+                    <h2>Agent Skills</h2>
+                    <p>Teach Claude Code how to review notebooks, check for model bias, and clean datasets autonomously.</p>
+                </div>
+                <div class="skill-document">
+                    <div class="document-header">
+                        <span>skills/data_science_assistant/SKILL.md</span>
+                    </div>
+                    <div class="document-body">
+                        <h3>Trigger Criteria</h3>
+                        <p>Automatically triggered when working on python data science scripts, CSV files, pandas, numpy, scikit-learn, and matplotlib.</p>
+                        <h3>Key Guidance Rules</h3>
+                        <ul>
+                            <li><strong>Distribution Checking:</strong> Always verify statistics with <code>describe()</code> and null counts.</li>
+                            <li><strong>Data Leakage Prevention:</strong> Perform train-test splits before running standard scaler transformations.</li>
+                            <li><strong>Target Imbalance Management:</strong> Check if targets are skewed; suggest stratified splits or class weights.</li>
+                            <li><strong>High Quality Plotting:</strong> Labels, titles, gridlines, and high-DPI saving are mandatory.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
