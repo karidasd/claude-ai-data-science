@@ -36,8 +36,12 @@
                     <span>MCP Server Config</span>
                 </button>
                 <button class="nav-item" data-tab="skills">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <i class="fa-solid fa-list-check"></i>
                     <span>Agent Skills</span>
+                </button>
+                <button class="nav-item" data-tab="promptgen">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Prompt Generator</span>
                 </button>
             </nav>
             <div class="sidebar-footer">
@@ -117,6 +121,14 @@
                             <span class="notebook-path">📁 notebooks/04_rag_on_scientific_literature.py</span>
                         </div>
                     </div>
+                    <div class="notebook-card">
+                        <div class="notebook-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="notebook-details">
+                            <h3>05_thinking_and_caching_for_datasets.py</h3>
+                            <p>Demonstrates prompt caching configurations for large datasets and utilizing extended thinking budgets for complex modeling reasoning.</p>
+                            <span class="notebook-path">📁 notebooks/05_thinking_and_caching_for_datasets.py</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="prompt-builder-sandbox">
@@ -192,6 +204,33 @@
                             <li><strong>Target Imbalance Management:</strong> Check if targets are skewed; suggest stratified splits or class weights.</li>
                             <li><strong>High Quality Plotting:</strong> Labels, titles, gridlines, and high-DPI saving are mandatory.</li>
                         </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Prompt Generator -->
+            <section id="promptgen-tab" class="tab-panel">
+                <div class="section-header">
+                    <h2>Data Science Prompt Generator</h2>
+                    <p>Select a data science task below to generate an optimized prompt with XML tag structures tailored for Claude.</p>
+                </div>
+                <div class="promptgen-container">
+                    <div class="promptgen-selector">
+                        <label for="task-select">Select Task:</label>
+                        <select id="task-select" class="form-control">
+                            <option value="data-cleaning">Data Imputation & Cleaning</option>
+                            <option value="feature-engineering">Feature Selection & Engineering</option>
+                            <option value="model-selection">Model Performance Assessment</option>
+                            <option value="data-visualization">Matplotlib Custom Visualizations</option>
+                        </select>
+                        <button class="btn btn-primary" id="generate-prompt-btn">Generate Structured Prompt</button>
+                    </div>
+                    <div class="promptgen-result">
+                        <div class="config-header">
+                            <span>Optimized Prompt Output</span>
+                            <button class="copy-btn" id="copy-prompt-btn"><i class="fa-regular fa-copy"></i> Copy Prompt</button>
+                        </div>
+                        <pre><code id="prompt-output-box">Select a task and click Generate...</code></pre>
                     </div>
                 </div>
             </section>

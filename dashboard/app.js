@@ -229,7 +229,82 @@ The widget broke on first use! Customer name: John Doe. Rating: 1 star.
             });
         });
     }
+
+    // Prompt Generator Logic
+    const generatePromptBtn = document.getElementById("generate-prompt-btn");
+    const taskSelect = document.getElementById("task-select");
+    const promptOutputBox = document.getElementById("prompt-output-box");
+    const copyPromptBtn = document.getElementById("copy-prompt-btn");
+
+    if (generatePromptBtn && taskSelect && promptOutputBox) {
+        generatePromptBtn.addEventListener("click", () => {
+            const selectedTask = taskSelect.value;
+            const promptTemplate = promptsData[selectedTask];
+            promptOutputBox.innerText = promptTemplate;
+        });
+    }
+
+    if (copyPromptBtn && promptOutputBox) {
+        copyPromptBtn.addEventListener("click", () => {
+            navigator.clipboard.writeText(promptOutputBox.innerText).then(() => {
+                copyPromptBtn.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
+                setTimeout(() => {
+                    copyPromptBtn.innerHTML = `<i class="fa-regular fa-copy"></i> Copy Prompt`;
+                }, 2000);
+            }).catch(err => {
+                console.error("Could not copy prompt: ", err);
+            });
+        });
+    }
 }
+
+// Data Science Prompts Data templates
+const promptsData = {
+    "data-cleaning": `<instructions>
+You are a data-cleaning agent. Your task is to clean and prepare the provided CSV dataset.
+1. Identify all columns with missing values.
+2. For numeric columns, impute missing values with the median.
+3. For categorical columns, impute missing values with the mode.
+4. Output a summary of imputations made and the final cleaned DataFrame.
+</instructions>
+
+<dataset>
+[Insert Your CSV Content Here]
+</dataset>`,
+    "feature-engineering": `<instructions>
+You are an expert feature selection agent. Review the columns of the provided dataset and identify which features should be selected or created for predicting the target variable.
+1. Compute the correlation of all variables with the target.
+2. Recommend feature engineering steps (e.g. log scaling, one-hot encoding).
+3. Draft python code using pandas to execute these steps.
+</instructions>
+
+<dataset>
+Target Column: [Specify Target Column]
+Columns Info: [Specify Column Names and Types]
+</dataset>`,
+    "model-selection": `<instructions>
+You are a machine learning evaluation assistant. Analyze the model performance metrics provided.
+1. Compare precision, recall, and ROC-AUC scores.
+2. Identify if the model is overfitting or underfitting.
+3. Suggest 3 hyperparameters to tune to improve generalization performance.
+</instructions>
+
+<model_metrics>
+[Insert Train/Test Classification Report or Confusion Matrix Here]
+</model_metrics>`,
+    "data-visualization": `<instructions>
+You are a matplotlib expert visualization designer.
+Generate clean, production-ready Python plotting code using matplotlib and seaborn to visualize the relationship in the provided data description.
+Rules:
+- Include axis labels, title, and a grid.
+- Use a professional, high-contrast dark palette.
+- Set figsize to (8, 5) and save the plot as a high-DPI PNG.
+</instructions>
+
+<data_description>
+[Insert columns to plot and plot type, e.g. scatter plot of Age vs. Income]
+</data_description>`
+};
 
 // Start app
 window.addEventListener("DOMContentLoaded", init);

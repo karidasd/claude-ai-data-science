@@ -633,6 +633,71 @@ kbd {
     color: var(--text-secondary);
 }
 
+/* Prompt Generator Layout */
+.promptgen-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .promptgen-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.promptgen-selector {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-self: start;
+}
+
+.promptgen-selector label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+.form-control:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
+}
+
+.promptgen-result {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.promptgen-result pre {
+    padding: 1.5rem;
+    height: 350px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background-color: var(--bg-primary);
+    color: var(--success);
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
