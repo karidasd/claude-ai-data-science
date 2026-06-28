@@ -79,10 +79,12 @@ h1, h2, h3, h4 {
     -webkit-text-fill-color: transparent;
 }
 
-.logo-icon {
-    font-size: 1.5rem;
-    color: var(--accent-cyan);
-    -webkit-text-fill-color: initial;
+.logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid var(--border-highlight);
 }
 
 .sidebar-nav {
