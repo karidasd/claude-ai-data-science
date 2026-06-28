@@ -700,6 +700,137 @@ kbd {
     color: var(--success);
 }
 
+/* Student Roadmap styling */
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.roadmap-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all var(--transition-speed);
+}
+
+.roadmap-card:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 5px 15px rgba(155, 81, 224, 0.05);
+    transform: translateY(-2px);
+}
+
+.roadmap-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 0.75rem;
+}
+
+.platform-icon {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+}
+
+.roadmap-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.roadmap-card strong {
+    color: var(--text-primary);
+}
+
+.roadmap-integration-box {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.02);
+}
+
+.roadmap-integration-box h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-cyan);
+}
+
+.roadmap-integration-box p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.integration-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.step-box {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.25rem;
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.step-num {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: var(--accent-purple-gradient);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(155, 81, 224, 0.3);
+}
+
+.step-box h4 {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    color: var(--text-primary);
+}
+
+.step-box p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+.step-arrow {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .integration-steps {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }

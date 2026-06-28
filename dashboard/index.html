@@ -24,7 +24,7 @@
             </div>
             <nav class="sidebar-nav">
                 <button class="nav-item active" data-tab="curriculum">
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    <i class="fa-solid fa-book-open"></i>
                     <span>Curriculum Guide</span>
                 </button>
                 <button class="nav-item" data-tab="notebooks">
@@ -42,6 +42,10 @@
                 <button class="nav-item" data-tab="promptgen">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                     <span>Prompt Generator</span>
+                </button>
+                <button class="nav-item" data-tab="roadmap">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Student Roadmap</span>
                 </button>
             </nav>
             <div class="sidebar-footer">
@@ -231,6 +235,78 @@
                             <button class="copy-btn" id="copy-prompt-btn"><i class="fa-regular fa-copy"></i> Copy Prompt</button>
                         </div>
                         <pre><code id="prompt-output-box">Select a task and click Generate...</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab: Student Roadmap -->
+            <section id="roadmap-tab" class="tab-panel">
+                <div class="section-header">
+                    <h2>🎓 Student Portfolio Roadmap</h2>
+                    <p>Learn how to use free learning resources to build a solid, industry-ready GitHub portfolio matching AI and Data Science.</p>
+                </div>
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <i class="fa-solid fa-graduation-cap platform-icon"></i>
+                            <h3>1. DeepLearning.AI</h3>
+                        </div>
+                        <p><strong>What it teaches:</strong> Advanced prompting, function calling, LLM API logic.</p>
+                        <p><strong>Portfolio Action:</strong> Build a Python pipeline that sends messy data to an LLM and returns clean JSON/CSV metrics.</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <i class="fa-solid fa-chart-line platform-icon"></i>
+                            <h3>2. Kaggle Learn</h3>
+                        </div>
+                        <p><strong>What it teaches:</strong> Pandas, NumPy, Matplotlib/Seaborn, exploratory visualization.</p>
+                        <p><strong>Portfolio Action:</strong> Download a Kaggle dataset, run statistics, plot correlation heatmaps, and write a complete EDA report.</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <i class="fa-solid fa-database platform-icon"></i>
+                            <h3>3. Coursera (Audit)</h3>
+                        </div>
+                        <p><strong>What it teaches:</strong> SQL Joins, CTEs, Window functions, business case methodologies.</p>
+                        <p><strong>Portfolio Action:</strong> Build a folder of clean <code>.sql</code> files that execute analytical data queries on a mock database.</p>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <i class="fa-solid fa-laptop-code platform-icon"></i>
+                            <h3>4. freeCodeCamp</h3>
+                        </div>
+                        <p><strong>What it teaches:</strong> Hands-on data viz certifications and demographic analyzers.</p>
+                        <p><strong>Portfolio Action:</strong> Complete their assignments (Demographic Analyzer, Medical Visualizer) and host them directly on your GitHub.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-integration-box">
+                    <h3>🔗 How AI & Data Science "Marry" in Practice</h3>
+                    <p>Show your students how a complete portfolio project integrates all these elements:</p>
+                    <div class="integration-steps">
+                        <div class="step-box">
+                            <span class="step-num">Step 1</span>
+                            <h4>Data Sourcing (Kaggle)</h4>
+                            <p>Download a raw tabular dataset containing real-world records.</p>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="step-box">
+                            <span class="step-num">Step 2</span>
+                            <h4>Database Queries (Coursera)</h4>
+                            <p>Write raw SQL CTEs to clean and extract key aggregates.</p>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="step-box">
+                            <span class="step-num">Step 3</span>
+                            <h4>Viz & Modeling (freeCodeCamp)</h4>
+                            <p>Build a python notebook with Seaborn plots and models.</p>
+                        </div>
+                        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="step-box">
+                            <span class="step-num">Step 4</span>
+                            <h4>AI Integration (DeepLearning.AI)</h4>
+                            <p>Use Claude/Llama API to auto-generate a structured JSON report.</p>
+                        </div>
                     </div>
                 </div>
             </section>

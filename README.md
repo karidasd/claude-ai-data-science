@@ -63,6 +63,35 @@ This repository is organized into practical components that apply Anthropic's te
 
 ---
 
+## 🎓 Student Portfolio Guide: Free Learning Platforms
+
+For students entering the AI and Data Science field, building public portfolio projects on GitHub is essential. Here is a roadmap showing how to use free learning platforms to build impressive GitHub repositories:
+
+### 1. DeepLearning.AI Short Courses (0€)
+*   **What you learn**: Prompt engineering, LLM API connections, and structuring AI outputs (JSON/CSV).
+*   **What to put on GitHub**: A custom python script or notebook connecting to a free LLM API (e.g. Hugging Face or local Ollama) that accepts raw data and returns structured JSON analysis.
+
+### 2. Kaggle Learn (0€)
+*   **What you learn**: Tabular data manipulation (Pandas), SQL querying, and visualizations (Matplotlib/Seaborn).
+*   **What to put on GitHub**: A complete Exploratory Data Analysis (EDA) Jupyter Notebook. Download a free Kaggle dataset, run statistics, plot correlation heatmaps, and document your findings.
+
+### 3. Coursera - Google/IBM Audit (0€)
+*   **What you learn**: Business cases, project management methodologies, and structured querying.
+*   **What to put on GitHub**: A `queries.sql` script folder showing how you clean and query data using Joins, CTEs (Common Table Expressions), and Window functions on a mock database.
+
+### 4. freeCodeCamp (0€)
+*   **What you learn**: Certification projects like the Demographic Data Analyzer or Medical Data Visualizer.
+*   **What to put on GitHub**: These projects are pre-designed for portfolios. Publish your custom solutions directly as standalone GitHub repos.
+
+### 🔗 How They Connect (The "Marriage" of AI & Data Science)
+A unified portfolio project brings these platforms together:
+1.  Use **Kaggle** to source a dataset.
+2.  Use **Coursera/Google** structure to write a clean folder of SQL queries analyzing the data.
+3.  Use **freeCodeCamp** principles to build a notebook with clean pandas transformations and Matplotlib charts.
+4.  Use **DeepLearning.AI** guidelines to build a python script that sends these findings to an LLM, generating a structured report automatically.
+
+---
+
 ## 🚀 Local Quickstart
 
 ### 1. Prerequisites
