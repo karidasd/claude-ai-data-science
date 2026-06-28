@@ -1,5 +1,7 @@
 # Claude AI & Data Science Integration
 
+![Claude AI & Data Science Banner](dashboard/assets/ai_ds_banner.png)
+
 Welcome to the **Claude AI & Data Science Integration** repository! This project bridges the gap between Anthropic's official Claude educational materials and real-world Data Science and AI Engineering workflows. 
 
 It is designed to "marry" AI capabilities with data science practices, demonstrating how Claude can act as an intelligent partner for data cleaning, exploratory data analysis (EDA), predictive modeling, research RAG (Retrieval-Augmented Generation), and custom tool execution.
